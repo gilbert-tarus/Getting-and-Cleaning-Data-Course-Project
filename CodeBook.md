@@ -1,9 +1,9 @@
-#The "run_analysis.R" script performs the data preparation(downloading and reading). Also it has the 5 steps required as #described in the course project.
+## The "run_analysis.R" script performs the data preparation(downloading and reading). Also it has the 5 steps required as #described in the course project.
 
-#Download the dataset
+## Download the dataset
 Dataset downloaded and extracted under the folder called UCI HAR Dataset(a subfolder of data folder just created)
 
-#Assign each data to variables
+## Assign each data to variables
 FeaturesNames <- features.txt : 561 rows, 2 columns
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
 
@@ -44,23 +44,23 @@ SubjectData: (10299 rows, 1 column) is created by merging subjectTrain and subje
 
 Data1 (10299 rows, 563 column) is created by merging FeaturesData, ActivityData and SubjectData using cbind() function
 
-#Extracts only the measurements on the mean and standard deviation for each measurement
+## Extracts only the measurements on the mean and standard deviation for each measurement
 literals is a numeeric vector that holds the output of grep function applied to  names of Data1. meanStdNames selects the names that matches the literals from FeaturesNames.
 
 Data2: (10299 rows, 88 columns) is created by subsetting Data1, selecting only columns: measurements on the mean and standard deviation (std)(using meanStdNames vector),subject and activity for each measurement
 
-#Uses descriptive activity names to name the activities in the data set
+## Uses descriptive activity names to name the activities in the data set
 Entire numbers in activity column of the Data2 replaced with corresponding activity taken from second column of the activityLabels variable
 
-#Appropriately labels the data set with descriptive variable names
-        # Acc is replaced by accelerometer
-        # BodyBody is replaced by Body
-        # Gryo is replaced by Gryoscope
-        # Mag is replaced by Magnitude
-        # prefix f is replaceed by frequency
-        # prefix t is replaced by time
+## Appropriately labels the data set with descriptive variable names
+        ### Acc is replaced by accelerometer
+        ### BodyBody is replaced by Body
+        ### Gryo is replaced by Gryoscope
+        ### Mag is replaced by Magnitude
+        ### prefix f is replaceed by frequency
+        ### prefix t is replaced by time
 
-#From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+## From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
 Data3 (180 rows, 88 columns) is created by sumarizing Data2 taking the means of each variable for each activity and each subject, after groupped by subject and activity.
 Export FinalData into tidydata.txt file.
