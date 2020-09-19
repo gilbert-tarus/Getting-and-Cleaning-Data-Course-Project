@@ -4,7 +4,7 @@
 Dataset downloaded and extracted under the folder called UCI HAR Dataset(a subfolder of data folder just created)
 
 ## Assign each data to variables
-FeaturesNames <- features.txt : 561 rows, 2 columns
+# FeaturesNames: features.txt : 561 rows, 2 columns
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
 
 featuresTrain <- test/X_train.txt : 7352 rows, 561 columns
