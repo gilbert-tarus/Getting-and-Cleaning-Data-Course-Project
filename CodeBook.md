@@ -44,12 +44,12 @@ The 561 names in `FeaturesNames` variable are assigned to `FeaturesData` using n
 `Data1` (10299 rows, 563 column) is created by merging FeaturesData, ActivityData and SubjectData using cbind() function
 
 ## Extracts only the measurements on the mean and standard deviation for each measurement
-`literals` is a numeeric vector that holds the output of grep function applied to  names of Data1. meanStdNames selects the names that matches the literals from `FeaturesNames.`
+`literals` is a numeeric vector that holds the output of grep function applied to  names of `Data1`. `meanStdNames` selects the names that matches the literals from `FeaturesNames.`
 
 `Data2:` (10299 rows, 88 columns) is created by subsetting Data1, selecting only columns: measurements on the mean and standard deviation (std)(using meanStdNames vector),subject and activity for each measurement
 
 ## Uses descriptive activity names to name the activities in the data set
-Entire numbers in activity column of the Data2 replaced with corresponding activity taken from second column of the activityLabels variable
+Entire numbers in `activity` column of the `Data2` replaced with corresponding activity taken from second column of the `activityLabels` variable
 
 ## Appropriately labels the data set with descriptive variable names
 #### `Acc` is replaced by `accelerometer`
@@ -62,4 +62,4 @@ Entire numbers in activity column of the Data2 replaced with corresponding activ
 ## From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
 `Data3` (180 rows, 88 columns) is created by sumarizing `Data2` taking the means of each variable for each `activity` and each `subject`, after grouped by `subject` and `activity`.
-Export `Data3` into tidydata.txt file.
+Export `Data3` into `tidydata.txt` file.
